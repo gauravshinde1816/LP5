@@ -15,14 +15,14 @@ class tokenring {
             System.out.print(" " + i);
         }
         System.out.println(" " + 0);
-        do{
+        do {
             System.out.println("Enter sender:");
             int s = scan.nextInt();
             System.out.println("Enter receiver:");
             int r = scan.nextInt();
             System.out.println("Enter Data:");
             int a;
-            a = scan.nextInt();       
+            a = scan.nextInt();
             System.out.print("Token passing:");
             for (int i = token, j = token; (i % n) != s; i++, j = (j + 1) % n) {
                 System.out.print(" " + j + "->");
@@ -32,22 +32,22 @@ class tokenring {
             for (int i = s + 1; i != r; i = (i + 1) % n) {
                 System.out.println("data  " + a + " forwarded by " + i);
             }
-            System.out.println("Receiver " + r + " received data: " + a +"\n");
+            System.out.println("Receiver " + r + " received data: " + a + "\n");
             token = s;
-            do{	
+            do {
                 try {
-                    if( flag == 1)
-			System.out.print("Invalid Input!!...");
+                    if (flag == 1)
+                        System.out.print("Invalid Input!!...");
                     System.out.print("Do you want to send again?? enter 1 for Yes and 0 for No : ");
                     ch = scan.nextInt();
-                    if( ch != 1 && ch != 0 )
-			flag = 1;
+                    if (ch != 1 && ch != 0)
+                        flag = 1;
                     else
-			flag = 0;                    
-                } catch (InputMismatchException e){
+                        flag = 0;
+                } catch (InputMismatchException e) {
                     System.out.println("Invalid Input");
                 }
-            }while( ch != 1 && ch != 0 ); 
-        }while( ch == 1 );            
+            } while (ch != 1 && ch != 0);
+        } while (ch == 1);
     }
 }

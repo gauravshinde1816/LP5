@@ -2,18 +2,17 @@ import java.net.*;
 
 import java.rmi.*;
 
-public class AddServer{
+public class AddServer {
 
-public static void main(String args[]){
-try {
+	public static void main(String args[]) {
+		try {
 
-	AddServerImpl addServerImpl = new AddServerImpl();
+			AddServerImpl addServerImpl = new AddServerImpl();
+			Naming.rebind("AddServer", addServerImpl);
+		}
 
-	Naming.rebind("AddServer", addServerImpl);
-}
-
-catch(Exception e) { 
-	System.out.println("Exception: "+ e);
-}
-}
+		catch (Exception e) {
+			System.out.println("Exception: " + e);
+		}
+	}
 }
